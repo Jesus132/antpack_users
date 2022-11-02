@@ -2,6 +2,7 @@
 //
 //     final item = itemFromJson(jsonString);
 
+import 'package:image_picker/image_picker.dart';
 import 'package:meta/meta.dart';
 import 'dart:convert';
 
@@ -13,18 +14,22 @@ class Item {
   Item({
     required this.label,
     required this.text,
+    this.img,
   });
 
   String label;
   String text;
+  XFile? img;
 
   factory Item.fromJson(Map<String, dynamic> json) => Item(
         label: json["label"],
         text: json["text"],
+        img: json["img"],
       );
 
   Map<String, dynamic> toJson() => {
         "label": label,
         "text": text,
+        "img": img,
       };
 }
