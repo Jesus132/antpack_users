@@ -29,14 +29,14 @@ class FetchUsers {
     auxListUsers = userFromJson(response);
     for (var i = 0; i < auxListUsers.length; i++) {
       final List<Item> auxItem = [];
-      auxItem.add(
-          itemFromJson('{"text": "${auxListUsers[i].name}", "label": "Name"}'));
       auxItem.add(itemFromJson(
-          '{"text": "${auxListUsers[i].email}", "label": "Email"}'));
+          '{"text": "${auxListUsers[i].name}", "label": "Name", "img": null}'));
       auxItem.add(itemFromJson(
-          '{"text": "${auxListUsers[i].address.city}", "label": "City"}'));
+          '{"text": "${auxListUsers[i].email}", "label": "Email", "img": null}'));
       auxItem.add(itemFromJson(
-          '{"text": "${auxListUsers[i].company.name}", "label": "Company name"}'));
+          '{"text": "${auxListUsers[i].address.city}", "label": "City", "img": null}'));
+      auxItem.add(itemFromJson(
+          '{"text": "${auxListUsers[i].company.name}", "label": "Company name", "img": null}'));
       listUsers.add(auxItem);
     }
 
